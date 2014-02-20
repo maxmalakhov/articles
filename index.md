@@ -2,4 +2,4 @@
 
 ## 1. Exception Handling
 
-<<[article1.md]
+<<[./article1.md]

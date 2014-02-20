@@ -16,8 +16,8 @@
 
 =================================================================================
 
-Overview of the issue
+## Overview of the issue
 
 Today there are a lot of modern java web applications that have the server and client is separaeted. For the communication between them is used the HTTP/REST and JSON standards. This architecture means there is a single server that handles one or severel clients. The client can be an another Java project with JSP, JSF or Wicket fraemworks or it can be a static project on JavaScript/HTML and of course it can be a mobile application.
 The REST on the server can be built out of fraemworks such as Spring MVC or some of JAX-RS implimentations.
->> see the image img1c
+![Alt text](article1_img/img1_1.png "Client Server Architecture")
