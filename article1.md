@@ -57,31 +57,58 @@ public class MySpringController {
 
 Example with JAX-RS
 
+>!
 ```java
-@Resourse
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+```
+
+```java
+@Path("/service")
+@Component
 public class MyRestResource {
 	@Autowired
 	MySpringService service;
 
 	//@MappingHandling(method=RequestMethodType.POST, consume=ApplicationType.JSON, produce=ApplicationType.JSON)
 	@POST
-	@ResponseBody
-	public ResponseBodyWrapper saveEntity(@RequestBody MyEntity entity) {
+    @Path("/entity")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+	public Response saveEntity(@RequestBody MyEntity entity) {
 		MyEntity savedEntity = service.save(entity);
 		ResponseBodyWrapper body = ResponseBodyWrapper.success(savedEntity);
-		return body;
+
+        return Response.ok()
+                .entity(body);
+                .type(MediaType.APPLICATION_JSON);
+                .build();
 	}
 }
+
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.ext.ExceptionMapper;
+import javax.ws.rs.ext.Provider;
 
 @Provider
 public class MyExceptionMapper extends ExceptionMapper<IlligalArgumentException> {
 	
-	@HandlingException(exception=@IlligalArgumentException.class)
-	public ResponseBodyWrapper handleException(Throwble exception) {
-		
-		ResponseBodyWrapper body = ResponseBodyWrapper.failrure(exception.getMessage());
-		return body;
-	}
+    @Override
+    public Response toResponse(IlligalArgumentException exception)
+    {
+        ResponseBodyWrapper body = ResponseBodyWrapper.failure(exception.getMessage());
+
+        return Response.ok()
+                .entity(body);
+                .type(MediaType.APPLICATION_JSON);
+                .build();
+    }
 }
 ```
 
