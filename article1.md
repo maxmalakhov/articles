@@ -18,6 +18,7 @@
 
 
 ## Tale #1. Hunter Error 500
+#### Preface
 
 In those days was a lot of modern java web applications that had the server and client is separaeted. For the communication between them was used the HTTP/REST and JSON standards. This architecture means there is a single server that handles one or severel clients. The client can be an another Java project with JSP, JSF or Wicket fraemworks or it can be a static project on JavaScript/HTML and of course it can be a mobile application. The REST on the server can be built out of fraemworks such as Spring MVC or some of JAX-RS implimentations.
 
@@ -27,9 +28,11 @@ How the communication works. The client send a http request to the server and it
 
 ![Alt text](article1_res/img1_2.png "Http communication")
 
-Sometimes the server can return an unexpected error, then the response code status is 500. In other words the request fails and the client get an error. That all adduces to the crash of the application that makes the user very sad and even angry. The programmer has been adding a lot of try...catch bloks on the server and clients each time when the user reperted
+Sometimes the server can return an unexpected error, then the response code status is 500. In other words the request fails and the client get an error. That all adduces to the crash of the application that makes the user very sad and even angry. The programmer has been adding a lot of try...catch bloks into the server and clients each time when the user reports a new bug.
 
 ![Alt text](article1_res/img1_3.png "A sad user") 
+
+
 
 Example with Spring MVC
 
@@ -57,7 +60,6 @@ public class MySpringController {
 
 Example with JAX-RS
 
->!
 ```java
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -66,9 +68,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-```
 
-```java
 @Path("/service")
 @Component
 public class MyRestResource {
@@ -112,5 +112,12 @@ public class MyExceptionMapper extends ExceptionMapper<IlligalArgumentException>
 }
 ```
 
+
+#### TOC
+1. Preface
+
+---
+
 Thanks [Sublime Text](http://www.sublimetext.com/) and [Balsamiq Mockups](http://balsamiq.com/) for make my writing easily and nicely
+
 Copyright &copy; 2014 Max Malakhov

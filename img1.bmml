@@ -56,7 +56,7 @@
         <text>1-1</text>
       </controlProperties>
     </control>
-    <control controlID="9" controlTypeID="com.balsamiq.mockups::CallOut" x="920" y="52" w="-1" h="-1" measuredW="49" measuredH="43" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::CallOut" x="920" y="52" w="-1" h="-1" measuredW="49" measuredH="37" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <text>1-2</text>
       </controlProperties>
@@ -107,7 +107,7 @@
         <text>2xx%20response%20status%20code</text>
       </controlProperties>
     </control>
-    <control controlID="19" controlTypeID="com.balsamiq.mockups::CallOut" x="58" y="486" w="-1" h="-1" measuredW="49" measuredH="37" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::CallOut" x="58" y="486" w="-1" h="-1" measuredW="49" measuredH="40" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <text>1-3</text>
       </controlProperties>
@@ -155,6 +155,23 @@
         <shape>dottedRect</shape>
         <size>14</size>
         <text>Oops%21%0AError%20500</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::RoundButton" x="660" y="538" w="36" h="23" measuredW="36" measuredH="36" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>16777215</borderColor>
+        <color>16776960</color>
+        <icon>RightArrowIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::RoundButton" x="720" y="523" w="51" h="48" measuredW="52" measuredH="52" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <borderColor>16777215</borderColor>
+        <color>16370588</color>
+        <icon>PrintIcon%7Clarge</icon>
+        <shape>roundRect</shape>
+        <text>Bug</text>
       </controlProperties>
     </control>
   </controls>
